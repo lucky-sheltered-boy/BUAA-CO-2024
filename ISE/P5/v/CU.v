@@ -1,0 +1,191 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    20:09:18 10/30/2024 
+// Design Name: 
+// Module Name:    CU 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+
+`include "constants.v"
+
+module CU(
+	input [5:0] Op,
+	input [5:0] Func,
+	output reg [1:0] RegDst,
+	output reg [1:0] ALUSrc,
+	output reg [1:0] memtoReg,
+	output reg Regwrite,
+	output reg Memwrite,
+	output reg [3:0] PCsel,
+	output reg [7:0] Extop,
+	output reg [7:0] ALUop,
+	output reg [7:0] instr_type,
+	output reg [7:0] TNew_D,
+	output reg [7:0] TUse_D1,
+	output reg [7:0] TUse_D2
+    );
+
+	reg [7:0] instr;
+	
+	always@(*) begin
+		if(Op == 6'b000000 && Func == 6'b100000) begin
+			instr = `add;
+		end else if(Op == 6'b000000 && Func == 6'b100010) begin
+			instr = `sub;
+		end else if(Op == 6'b001101) begin
+			instr = `ori;
+		end else if(Op == 6'b001111) begin
+			instr = `lui;
+		end else if(Op == 6'b100011) begin
+			instr = `lw;
+		end else if(Op == 6'b101011) begin
+			instr = `sw;
+		end else if(Op == 6'b000100) begin
+			instr = `beq;
+		end else if(Op == 6'b000011) begin
+			instr = `jal;
+		end else if(Op == 6'b000000 && Func == 6'b001000) begin
+			instr = `jr;
+		end else begin
+			instr = `nop;
+		end
+	end
+	
+	always@(*) begin
+		if(instr == `add
+		|| instr == `sub) begin
+			RegDst = 2'b01;
+		end else if(instr == `jal) begin
+			RegDst = 2'b10;
+		end else if(instr == `ori
+		|| instr == `lui
+		|| instr == `lw)begin
+			RegDst = 2'b00;
+		end else begin
+			RegDst = 2'b11;
+		end
+		
+		if(instr == `ori
+		|| instr == `lui
+		|| instr == `lw 
+		|| instr == `sw) begin
+			ALUSrc = 2'b01;
+		end else begin
+			ALUSrc = 2'b00;
+		end
+		
+		if(instr == `lw) begin
+			memtoReg = 2'b01;
+		end else if(instr == `jal) begin
+			memtoReg = 2'b10;
+		end else begin
+			memtoReg = 2'b00;
+		end
+		
+		if(instr == `add
+		|| instr == `sub
+		|| instr == `ori 
+		|| instr == `lui
+		|| instr == `lw 
+		|| instr == `jal) begin
+			Regwrite = 1;
+		end else begin
+			Regwrite = 0;
+		end
+		
+		if(instr == `sw) begin
+			Memwrite = 1;
+		end else begin
+			Memwrite = 0;
+		end
+		
+		if(instr == `beq) begin
+			PCsel = 4'b0001;
+		end else if(instr == `jal) begin
+			PCsel = 4'b0010;
+		end else if(instr == `jr) begin
+			PCsel = 4'b0011;
+		end else begin
+			PCsel = 4'b0000;
+		end
+		
+		if(instr == `lw
+		|| instr == `sw) begin
+			Extop = 4'b0001;
+		end else if(instr == `lui) begin
+			Extop = 4'b0010;
+		end else if(instr == `beq) begin
+			Extop = 4'b0011;
+		end else if(instr == `jal) begin
+			Extop = 4'b0100;
+		end else begin
+			Extop = 4'b0000;
+		end
+		
+		if(instr == `sub) begin
+			ALUop = `SUB;
+		end else if(instr == `ori) begin
+			ALUop = `OR;
+		end else if(instr == `beq) begin
+			ALUop = `EQUAL;
+		end else begin
+			ALUop = `ADD;
+		end
+		
+		instr_type = instr;
+		
+		if(instr == `add
+		|| instr == `sub
+		|| instr == `ori
+		|| instr == `lui) begin
+			TNew_D = 2;
+		end else if(instr == `lw) begin
+			TNew_D = 3;
+		end else begin
+			TNew_D = 0;
+		end
+		
+		if(instr == `add
+		|| instr == `sub
+		|| instr == `ori
+		|| instr == `lw
+		|| instr == `sw) begin
+			TUse_D1 = 1;
+		end else if(instr == `lui
+		|| instr == `jal) begin
+			TUse_D1 = 10;
+		end else begin
+			TUse_D1 = 0;
+		end
+		
+		if(instr == `add
+		|| instr == `sub) begin
+			TUse_D2 = 1;
+		end else if(instr == `sw) begin
+			TUse_D2 = 2;
+		end else if(instr == `ori
+		|| instr == `lui
+		|| instr == `lw
+		|| instr == `jal
+		|| instr == `jr) begin
+			TUse_D2 = 10;
+		end else begin
+			TUse_D2 = 0;
+		end
+		
+	end
+	
+endmodule

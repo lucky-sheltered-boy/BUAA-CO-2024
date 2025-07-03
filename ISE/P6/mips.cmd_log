@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "/media/shared/share/ISE/P6/mips.xst" -ofn "/media/shared/share/ISE/P6/mips.syr" 
+xst -intstyle ise -ifn "/media/shared/share/ISE/P6/mips.xst" -ofn "/media/shared/share/ISE/P6/mips.syr" 
+xst -intstyle ise -ifn "/media/shared/share/ISE/P6/mips.xst" -ofn "/media/shared/share/ISE/P6/mips.syr" 
+xst -intstyle ise -ifn "/media/shared/share/ISE/P6/mips.xst" -ofn "/media/shared/share/ISE/P6/mips.syr" 

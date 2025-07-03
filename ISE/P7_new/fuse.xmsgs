@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/media/shared/share/ISE/P7_new/v/MD.v" Line 95: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/media/shared/share/ISE/P7_new/v/MD.v" Line 96: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/media/shared/share/ISE/P7_new/v/ALU.v" Line 58: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/media/shared/share/ISE/P7_new/v/ALU.v" Line 58: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/media/shared/share/ISE/P7_new/v/MD.v" Line 95: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/media/shared/share/ISE/P7_new/v/MD.v" Line 96: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/media/shared/share/ISE/P7_new/v/mips.v" Line 106: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">Addr</arg>&gt;. Formal port size is <arg fmt="%d" index="2">30</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/media/shared/share/ISE/P7_new/v/mips.v" Line 116: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">Addr</arg>&gt;. Formal port size is <arg fmt="%d" index="2">30</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+</messages>
+

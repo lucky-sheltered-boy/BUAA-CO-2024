@@ -1,0 +1,93 @@
+.macro end
+    li      $v0, 10
+    syscall
+.end_macro
+
+.macro getInt(%des)
+    li      $v0, 5
+    syscall
+    move    %des, $v0
+.end_macro
+
+.macro getChar(%des)
+	li      $v0, 12
+	syscall
+	move    %des, $v0
+.end_macro
+
+.macro printInt(%src)
+    move    $a0, %src
+    li      $v0, 1
+    syscall
+.end_macro
+
+.macro printChar(%src)
+	la $a0 %src
+	li $v0 4
+	syscall 
+.end_macro
+
+.macro push(%src)
+    addi    $sp, $sp, -4
+    sw      %src, 0($sp)
+.end_macro
+
+.macro pop(%des)
+    lw      %des, 0($sp)
+    addi    $sp, $sp, 4
+.end_macro
+
+.macro Index(%n, %m, %s0, %ans)
+	mult %n %s0
+	mflo %ans
+	add %ans %ans %m
+	sll %ans %ans 2
+.end_macro
+
+.data
+	string: .space 30
+	
+.text
+	getInt($s0)  #s0 = n
+	li $s1 1
+	
+	li $t0 0
+for_start:
+	slt $t1 $t0 $s0
+	beq $t1 $0 for_end
+	
+	getChar($t1)
+	sb $t1 string($t0)
+	
+	addi $t0 $t0 1
+	j for_start
+for_end:
+
+	li $t0 0
+for_start2:
+	slt $t1 $t0 $s0
+	beq $t1 $0 for_end2
+	
+	lb $t1 string($t0)
+	sub $t2 $s0 $t0
+	subi $t2 $t2 1
+	lb $t2 string($t2)
+	
+	sub $t3 $t1 $t2
+	
+	bne $t3 $0 else
+	if_start:
+		j if_end
+	else:
+		li $s1 0
+		j end
+	if_end:
+	
+	
+	addi $t0 $t0 1
+	j for_start2
+for_end2:
+
+end:
+	printInt($s1)
+	end

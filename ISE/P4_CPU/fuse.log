@@ -1,0 +1,35 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /media/shared/share/ISE/P4_CPU/mips_isim_beh.exe -prj /media/shared/share/ISE/P4_CPU/mips_beh.prj work.mips work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Analyzing Verilog file "/media/shared/share/ISE/P4_CPU/splitter.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P4_CPU/PC.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P4_CPU/IM.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P4_CPU/GRF.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P4_CPU/Extender.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P4_CPU/DM.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P4_CPU/CU.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P4_CPU/ALU.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P4_CPU/mips.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 82888 KB
+Fuse CPU Usage: 1360 ms
+Compiling module PC
+Compiling module IM
+Compiling module splitter
+Compiling module CU
+Compiling module GRF
+Compiling module ALU
+Compiling module Extender
+Compiling module DM
+Compiling module mips
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 10 Verilog Units
+Built simulation executable /media/shared/share/ISE/P4_CPU/mips_isim_beh.exe
+Fuse Memory Usage: 86308 KB
+Fuse CPU Usage: 1390 ms
+GCC CPU Usage: 1020 ms

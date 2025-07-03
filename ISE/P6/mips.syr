@@ -1,0 +1,174 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: mips.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "mips.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "mips"
+Output Format                      : NGC
+Target Device                      : xa3s50-4-vqg100
+
+---- Source Options
+Top Module Name                    : mips
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "v/splitter.v" in library work
+Compiling verilog include file "v/constants.v"
+Compiling verilog file "v/Reg_M.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <splitter> compiled
+Compiling verilog file "v/Reg_F.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <Reg_M> compiled
+Compiling verilog file "v/Reg_E.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <Reg_F> compiled
+Compiling verilog file "v/Reg_D.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <Reg_E> compiled
+Compiling verilog file "v/PC.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <Reg_D> compiled
+Compiling verilog file "v/GRF.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <PC> compiled
+Compiling verilog file "v/Extender.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <GRF> compiled
+Compiling verilog file "v/CU.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <Extender> compiled
+Compiling verilog file "v/ALU.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <CU> compiled
+Compiling verilog file "v/mips.v" in library work
+Compiling verilog include file "v/constants.v"
+Module <ALU> compiled
+Module <mips> compiled
+No errors in compilation
+Analysis of file <"mips.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <mips> in library <work>.
+
+Analyzing hierarchy for module <PC> in library <work>.
+
+Analyzing hierarchy for module <Reg_F> in library <work>.
+
+Analyzing hierarchy for module <splitter> in library <work>.
+
+Analyzing hierarchy for module <CU> in library <work>.
+
+Analyzing hierarchy for module <GRF> in library <work>.
+
+Analyzing hierarchy for module <Extender> in library <work>.
+
+Analyzing hierarchy for module <Reg_D> in library <work>.
+
+Analyzing hierarchy for module <ALU> in library <work>.
+
+Analyzing hierarchy for module <Reg_E> in library <work>.
+
+Analyzing hierarchy for module <Reg_M> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <mips>.
+WARNING:Xst:852 - "v/mips.v" line 156: Unconnected input port 'BnePc' of instance 'module_pc' is tied to GND.
+Module <mips> is correct for synthesis.
+ 
+Analyzing module <PC> in library <work>.
+Module <PC> is correct for synthesis.
+ 
+Analyzing module <Reg_F> in library <work>.
+Module <Reg_F> is correct for synthesis.
+ 
+Analyzing module <splitter> in library <work>.
+Module <splitter> is correct for synthesis.
+ 
+Analyzing module <CU> in library <work>.
+Module <CU> is correct for synthesis.
+ 
+Analyzing module <GRF> in library <work>.
+ERROR:Xst:902 - "v/GRF.v" line 55: Unexpected register event in always block sensitivity list.
+ERROR:Xst:902 - "v/GRF.v" line 67: Unexpected register event in always block sensitivity list.
+ 
+Found 2 error(s). Aborting synthesis.
+--> 
+
+
+Total memory usage is 497120 kilobytes
+
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

@@ -1,0 +1,167 @@
+.macro getInt(%t)
+	li $v0 5
+	syscall
+	move %t $v0
+.end_macro
+
+.macro printInt(%t)
+	move $a0 %t
+	li $v0 1
+	syscall
+.end_macro
+
+.macro printChar(%t)
+	move $a0 %t
+	li $v0 4
+	syscall
+.end_macro
+
+.macro index(%n, %m, %s0, %ans)
+	mult %n %s0
+	mflo %ans
+	add %ans %ans %m
+	sll %ans %ans 2
+.end_macro
+
+.macro push(%t)
+	addi $sp $sp -4
+	sw %t 0($sp)
+.end_macro
+
+.macro pop(%t)
+	lw %t 0($sp)
+	addi $sp $sp 4
+.end_macro
+
+.data 
+	array_a: .space 256
+	array_b: .space 256
+	array_ans: .space 256
+	space: .asciiz " "
+	enter: .asciiz "\n"
+	
+.text
+	getInt($s0)  #s0 = n
+	
+	li $t0 0 #t0 = i
+fori_start:
+	slt $t2 $t0 $s0
+	beq $t2 $0 fori_end
+	
+	li $t1 0 #t1 = j
+	forj_start:
+		slt $t2 $t1 $s0
+		beq $t2 $0 forj_end
+		
+		index($t0, $t1, $s0, $t2)
+		getInt($t3)
+		sw $t3 array_a($t2)
+		
+		addi $t1 $t1 1
+		j forj_start
+	forj_end:
+	
+	addi $t0 $t0 1
+	j fori_start
+fori_end:
+	
+	li $t0 0 #t0 = i
+fori_start2:
+	slt $t2 $t0 $s0
+	beq $t2 $0 fori_end2
+	
+	li $t1 0 #t1 = j
+	forj_start2:
+		slt $t2 $t1 $s0
+		beq $t2 $0 forj_end2
+		
+		index($t0, $t1, $s0, $t2)
+		getInt($t3)
+		sw $t3 array_b($t2)
+		
+		addi $t1 $t1 1
+		j forj_start2
+	forj_end2:
+	
+	addi $t0 $t0 1
+	j fori_start2
+fori_end2:
+	
+	li $t0 0 #t0 = i
+fori_start3:
+	slt $t2 $t0 $s0
+	beq $t2 $0 fori_end3
+	
+	li $t1 0 #t1 = j
+	forj_start3:
+		slt $t2 $t1 $s0
+		beq $t2 $0 forj_end3
+		
+		move $a0 $t0
+		move $a1 $t1
+		jal function
+		
+		index($t0, $t1, $s0, $t2)
+		move $t3 $v0
+		sw $t3 array_ans($t2)
+		
+		addi $t1 $t1 1
+		j forj_start3
+	forj_end3:
+	
+	addi $t0 $t0 1
+	j fori_start3
+fori_end3:
+
+	
+	li $t0 0 #t0 = i
+fori_start5:
+	slt $t2 $t0 $s0
+	beq $t2 $0 fori_end5
+	
+	li $t1 0 #t1 = j
+	forj_start5:
+		slt $t2 $t1 $s0
+		beq $t2 $0 forj_end5
+		
+		index($t0, $t1, $s0, $t2)
+		lw $t3 array_ans($t2)
+		printInt($t3)
+		la $t3 space
+		printChar($t3)
+		
+		addi $t1 $t1 1
+		j forj_start5
+	forj_end5:
+	la $t3 enter
+	printChar($t3)
+	addi $t0 $t0 1
+	j fori_start5
+fori_end5:
+	li $v0 10
+	syscall
+	
+	
+
+function:
+	
+	move $t5 $a0  #t5=n
+	move $t6 $a1  #t6=m
+	li $v0 0
+	li $t7 0
+	fori_start4:
+		slt $t8 $t7 $s0
+		beq $t8 $0 fori_end4
+		
+		index($t5, $t7, $s0, $t8)
+		lw $t3 array_a($t8)
+		index($t7, $t6, $s0, $t8)
+		lw $t4 array_b($t8)
+		mult $t3 $t4
+		mflo $t8
+		add $v0 $v0 $t8
+		
+		addi $t7 $t7 1
+		j fori_start4
+	fori_end4:
+	jr $ra

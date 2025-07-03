@@ -1,0 +1,5 @@
+set -tmpdir "/media/shared/share/ISE/P1_L1_vote_plus/xst/projnav.tmp"
+set -xsthdpdir "/media/shared/share/ISE/P1_L1_vote_plus/xst"
+elaborate
+-ifn VoterPlus.prj
+-ifmt mixed

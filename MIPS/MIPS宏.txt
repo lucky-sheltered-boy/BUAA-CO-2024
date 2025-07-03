@@ -1,0 +1,94 @@
+.macro end
+    li      $v0, 10
+    syscall
+.end_macro
+
+.macro getInt(%des)
+    li      $v0, 5
+    syscall
+    move    %des, $v0
+.end_macro
+
+.macro getChar(%des)
+	li      $v0, 12
+	syscall
+	move    %des, $v0
+.end_macro
+
+.macro printInt(%src)
+    move    $a0, %src
+    li      $v0, 1
+    syscall
+.end_macro
+
+.macro printChar(%src)
+	la $a0 %src
+	li $v0 4
+	syscall 
+.end_macro
+
+.macro push(%src)
+    addi    $sp, $sp, -4
+    sw      %src, 0($sp)
+.end_macro
+
+.macro pop(%des)
+    lw      %des, 0($sp)
+    addi    $sp, $sp, 4
+.end_macro
+
+.macro Index(%n, %m, %s0, %ans)
+	mult %n %s0
+	mflo %ans
+	add %ans %ans %m
+	sll %ans %ans 2
+.end_macro
+
+
+
+function_read:
+	push($ra)
+	push($t0)
+	push($t1)
+	push($t2)
+	push($t3)
+	push($t4)
+	push($t5)
+	push($t6)
+	
+	move $t0 $a0 #t0 = n
+	move $t1 $a1 #t1 = m
+	move $t5 $a2 #t5 = s0
+	
+	li $t2 0     #t2 = i
+for_read_i_start:
+	slt $t4 $t2 $t0
+	beq $t4 $0 for_read_i_end
+	
+	li $t3 0     #t3 = j
+	for_read_j_start:
+		slt $t4 $t3 $t1
+		beq $t4 $0 for_read_j_end
+		
+		Index($t2, $t3, $t5, $t4)
+		getInt($t6)
+		sw $t6 array($t4)
+		
+		addi $t3 $t3 1
+		j for_read_j_start
+	for_read_j_end:
+	
+	
+	addi $t2 $t2 1
+	j for_read_i_start
+for_read_i_end:
+	pop($t6)
+	pop($t5)
+	pop($t4)
+	pop($t3)
+	pop($t2)
+	pop($t1)
+	pop($t0)
+	pop($ra)
+	
+	jr $ra

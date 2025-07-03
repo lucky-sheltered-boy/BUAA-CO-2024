@@ -1,0 +1,61 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/media/shared/share/ISE/P7_new/mips_txt_isim_beh.exe" -prj "/media/shared/share/ISE/P7_new/mips_txt_beh.prj" "work.mips_txt" "work.glbl" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/splitter.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/Reg_M.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/Reg_F.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/Reg_E.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/Reg_D.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/PC.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/MD.v" into library work
+WARNING:HDLCompiler:327 - "/media/shared/share/ISE/P7_new/v/MD.v" Line 95: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "/media/shared/share/ISE/P7_new/v/MD.v" Line 96: Concatenation with unsized literal; will interpret as 32 bits
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/GRF.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/Extender.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/CU.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/CP0.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/ALU.v" into library work
+WARNING:HDLCompiler:327 - "/media/shared/share/ISE/P7_new/v/ALU.v" Line 58: Concatenation with unsized literal; will interpret as 32 bits
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/TC2.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/TC1.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/CPU.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/Bridge.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/v/mips.v" into library work
+Analyzing Verilog file "/media/shared/share/ISE/P7_new/mips_txt.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:327 - "/media/shared/share/ISE/P7_new/v/ALU.v" Line 58: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "/media/shared/share/ISE/P7_new/v/MD.v" Line 95: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "/media/shared/share/ISE/P7_new/v/MD.v" Line 96: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:189 - "/media/shared/share/ISE/P7_new/v/mips.v" Line 106: Size mismatch in connection of port <Addr>. Formal port size is 30-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/media/shared/share/ISE/P7_new/v/mips.v" Line 116: Size mismatch in connection of port <Addr>. Formal port size is 30-bit while actual signal size is 32-bit.
+Completed static elaboration
+Fuse Memory Usage: 83744 KB
+Fuse CPU Usage: 1860 ms
+Compiling module PC
+Compiling module Reg_F
+Compiling module splitter
+Compiling module CU
+Compiling module GRF
+Compiling module Extender
+Compiling module Reg_D
+Compiling module ALU
+Compiling module MD
+Compiling module Reg_E
+Compiling module CP0
+Compiling module Reg_M
+Compiling module CPU
+Compiling module TC1
+Compiling module TC2
+Compiling module Bridge
+Compiling module mips
+Compiling module mips_txt
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 19 Verilog Units
+Built simulation executable /media/shared/share/ISE/P7_new/mips_txt_isim_beh.exe
+Fuse Memory Usage: 93012 KB
+Fuse CPU Usage: 2180 ms
+GCC CPU Usage: 530 ms

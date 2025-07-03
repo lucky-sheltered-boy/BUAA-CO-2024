@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="852" delta="old" >&quot;<arg fmt="%s" index="1">v/mips.v</arg>&quot; line <arg fmt="%d" index="2">156</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">BnePc</arg>&apos; of instance &apos;<arg fmt="%s" index="4">module_pc</arg>&apos; is tied to GND.
+</msg>
+
+<msg type="error" file="Xst" num="902" delta="new" >&quot;<arg fmt="%s" index="1">v/GRF.v</arg>&quot; line <arg fmt="%d" index="2">55</arg>: Unexpected <arg fmt="%s" index="3">register</arg> event in always block sensitivity list.
+</msg>
+
+<msg type="error" file="Xst" num="902" delta="new" >&quot;<arg fmt="%s" index="1">v/GRF.v</arg>&quot; line <arg fmt="%d" index="2">67</arg>: Unexpected <arg fmt="%s" index="3">register</arg> event in always block sensitivity list.
+</msg>
+
+</messages>
+

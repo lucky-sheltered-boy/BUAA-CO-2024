@@ -1,0 +1,5 @@
+set -tmpdir "/media/shared/share/ISE/P5/xst/projnav.tmp"
+set -xsthdpdir "/media/shared/share/ISE/P5/xst"
+elaborate
+-ifn Reg_M.prj
+-ifmt mixed
