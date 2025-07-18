@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/co-eda/ISE/pre_test/cscore_tb_isim_beh.exe" -prj "/home/co-eda/ISE/pre_test/cscore_tb_beh.prj" "work.cscore_tb" "work.glbl" 

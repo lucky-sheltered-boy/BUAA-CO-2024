@@ -1,0 +1,3 @@
+verilog work "cpu_checker.v"
+verilog work "cpu_checker_tb.v"
+verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

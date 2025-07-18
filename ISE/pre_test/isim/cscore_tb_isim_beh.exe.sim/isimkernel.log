@@ -1,0 +1,28 @@
+Command line:
+   cscore_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  57181
+
+Mon Sep 23 17:01:55 2024
+
+
+ Elaboration Time: 0.1 sec
+
+ Current Memory Usage: 183.894 Meg
+
+ Total Signals          : 17
+ Total Nets             : 30
+ Total Signal Drivers   : 8
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 14
+ Total Traceable Variables  : 23
+ Total Scalar Nets and Variables : 143
+
+ Total Simulation Time: 24.58 sec
+
+ Current Memory Usage: 259.396 Meg
+
+Mon Sep 23 17:05:25 2024
+

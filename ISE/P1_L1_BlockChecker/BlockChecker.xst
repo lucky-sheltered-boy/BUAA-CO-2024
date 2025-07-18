@@ -1,0 +1,5 @@
+set -tmpdir "/home/co-eda/ISE/P1_L1_BlockChecker/xst/projnav.tmp"
+set -xsthdpdir "/home/co-eda/ISE/P1_L1_BlockChecker/xst"
+elaborate
+-ifn BlockChecker.prj
+-ifmt mixed

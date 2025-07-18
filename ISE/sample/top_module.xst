@@ -1,0 +1,25 @@
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn top_module.prj
+-ifmt mixed
+-ofn top_module
+-ofmt NGC
+-p xa3s50-4-vqg100
+-top top_module
+-opt_mode Speed
+-opt_level 1
+-iuc NO
+-keep_hierarchy No
+-netlist_hierarchy As_Optimized
+-rtlview Yes
+-hierarchy_separator /
+-bus_delimiter <>
+-case Maintain
+-verilog2001 YES
+-fsm_extract YES -fsm_encoding Auto
+-mux_extract Yes
+-resource_sharing YES
+-iobuf YES
+-equivalent_register_removal YES
+-slice_utilization_ratio_maxmargin 5

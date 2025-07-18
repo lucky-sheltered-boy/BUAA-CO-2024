@@ -1,0 +1,10 @@
+Command line:
+   cpu_checker_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  39101
+
+Mon Sep  2 13:07:50 2024
+
+
+ Elaboration Time: 0.02 sec

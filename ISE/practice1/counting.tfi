@@ -1,0 +1,11 @@
+
+
+
+// Instantiate the module
+counting instance_name (
+    .num(num), 
+    .clk(clk), 
+    .ans(ans)
+    );
+
+

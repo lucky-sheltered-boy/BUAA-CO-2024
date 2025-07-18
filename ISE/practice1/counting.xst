@@ -1,0 +1,5 @@
+set -tmpdir "/home/co-eda/ISE/practice1/xst/projnav.tmp"
+set -xsthdpdir "/home/co-eda/ISE/practice1/xst"
+elaborate
+-ifn counting.prj
+-ifmt mixed

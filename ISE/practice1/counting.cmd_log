@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj practice1 -o /home/co-eda/ISE/practice1/counting.tfi -lib work /home/co-eda/ISE/practice1//counting.v -module counting -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

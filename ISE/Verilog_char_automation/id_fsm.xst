@@ -1,0 +1,5 @@
+set -tmpdir "/home/co-eda/ISE/Verilog_char_automation/xst/projnav.tmp"
+set -xsthdpdir "/home/co-eda/ISE/Verilog_char_automation/xst"
+elaborate
+-ifn id_fsm.prj
+-ifmt mixed

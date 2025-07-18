@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/co-eda/ISE/test_for/test_for_tb_isim_beh.exe" -prj "/home/co-eda/ISE/test_for/test_for_tb_beh.prj" "work.test_for_tb" "work.glbl" 

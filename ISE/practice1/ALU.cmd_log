@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "/home/co-eda/ISE/practice1/ALU.xst" -ofn "/home/co-eda/ISE/practice1/ALU.syr" 
+xst -intstyle ise -ifn "/home/co-eda/ISE/practice1/ALU.xst" -ofn "/home/co-eda/ISE/practice1/ALU.syr" 
+xst -intstyle ise -ifn "/home/co-eda/ISE/practice1/ALU.xst" -ofn "/home/co-eda/ISE/practice1/ALU.syr" 
+xst -intstyle ise -ifn "/home/co-eda/ISE/practice1/ALU.xst" -ofn "/home/co-eda/ISE/practice1/ALU.syr" 

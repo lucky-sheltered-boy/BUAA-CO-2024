@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/co-eda/ISE/Verilog_CPU/cpu_checker.xst" -ofn "/home/co-eda/ISE/Verilog_CPU/cpu_checker.syr" 
+xst -intstyle ise -ifn "/home/co-eda/ISE/Verilog_CPU/cpu_checker.xst" -ofn "/home/co-eda/ISE/Verilog_CPU/cpu_checker.syr" 

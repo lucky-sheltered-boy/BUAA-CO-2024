@@ -1,0 +1,30 @@
+Command line:
+   for_test_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  40685
+
+Mon Sep 23 23:57:55 2024
+
+
+ Elaboration Time: 0.03 sec
+
+ Current Memory Usage: 183.882 Meg
+
+ Total Signals          : 15
+ Total Nets             : 77
+ Total Signal Drivers   : 7
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 11
+ Total Traceable Variables  : 22
+ Total Scalar Nets and Variables : 257
+In process for_test.vCont_35_1 
+ FATAL ERROR:ISim: This application has discovered an exceptional condition from which it cannot recover. Process will terminate. To search for possible resolutions to this issue, refer to the Xilinx answer database by going to http://www.xilinx.com/support/answers/index.htm and search with keywords 'ISim' and 'FATAL ERROR'. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
+
+ Total Simulation Time: 0.04 sec
+
+ Current Memory Usage: 259.383 Meg
+
+Mon Sep 23 23:58:10 2024
+

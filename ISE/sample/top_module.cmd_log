@@ -1,0 +1,7 @@
+vhdtdtfi -lib work /home/co-eda/ISE/sample/top_module.v -lang verilog -prj sample -o top_module.spl -module top_module -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family aspartan3 top_module.spl /home/co-eda/ISE/sample/top_module.sym 
+vhdtdtfi -lib work /home/co-eda/ISE/sample/top_module.v -lang verilog -prj sample -o top_module.spl -module top_module -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family aspartan3 top_module.spl /home/co-eda/ISE/sample/top_module.sym 
+vhdtdtfi -lib work /home/co-eda/ISE/sample/top_module.v -lang verilog -prj sample -o top_module.spl -module top_module -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family aspartan3 top_module.spl /home/co-eda/ISE/sample/top_module.sym 
+xst -intstyle ise -ifn "/home/co-eda/ISE/sample/top_module.xst" -ofn "/home/co-eda/ISE/sample/top_module.syr" 

@@ -1,0 +1,292 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: cpu_checker.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cpu_checker.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cpu_checker"
+Output Format                      : NGC
+Target Device                      : xa3s50-4-vqg100
+
+---- Source Options
+Top Module Name                    : cpu_checker
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "cpu_checker.v" in library work
+Module <cpu_checker> compiled
+No errors in compilation
+Analysis of file <"cpu_checker.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <cpu_checker> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <cpu_checker>.
+WARNING:Xst:905 - "cpu_checker.v" line 394: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <TIME>, <freq>, <pc>, <grf>, <addr>
+Module <cpu_checker> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <wrong_time> in unit <cpu_checker> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <wrong_pc> in unit <cpu_checker> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <wrong_addr> in unit <cpu_checker> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <wrong_grf> in unit <cpu_checker> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <wrong_type> in unit <cpu_checker> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <cpu_checker>.
+    Related source file is "cpu_checker.v".
+WARNING:Xst:646 - Signal <wrong_type> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <next_s>.
+    -----------------------------------------------------------------------
+    | States             | 13                                             |
+    | Transitions        | 116                                            |
+    | Inputs             | 24                                             |
+    | Outputs            | 11                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000                                          |
+    | Power Up State     | 00000                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <wrong_time>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <wrong_pc>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <wrong_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <wrong_grf>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 32-bit register for signal <addr>.
+    Found 32-bit adder for signal <addr$share0000> created at line 97.
+    Found 4-bit register for signal <cnt_s11>.
+    Found 4-bit adder for signal <cnt_s11$share0000> created at line 97.
+    Found 4-bit register for signal <cnt_s2>.
+    Found 4-bit adder for signal <cnt_s2$share0000> created at line 97.
+    Found 4-bit register for signal <cnt_s4>.
+    Found 4-bit adder for signal <cnt_s4$share0000> created at line 97.
+    Found 4-bit register for signal <cnt_s7>.
+    Found 4-bit adder for signal <cnt_s7$share0000> created at line 97.
+    Found 16-bit register for signal <grf>.
+    Found 16-bit adder for signal <grf$addsub0000> created at line 97.
+    Found 16-bit adder for signal <grf$share0000> created at line 97.
+    Found 8-bit comparator greatequal for signal <next_s$cmp_ge0000> created at line 121.
+    Found 8-bit comparator greatequal for signal <next_s$cmp_ge0001> created at line 156.
+    Found 8-bit comparator lessequal for signal <next_s$cmp_le0000> created at line 121.
+    Found 4-bit comparator lessequal for signal <next_s$cmp_le0001> created at line 134.
+    Found 8-bit comparator lessequal for signal <next_s$cmp_le0002> created at line 156.
+    Found 4-bit comparator lessequal for signal <next_s$cmp_le0003> created at line 169.
+    Found 4-bit comparator lessequal for signal <next_s$cmp_le0004> created at line 243.
+    Found 4-bit comparator lessequal for signal <next_s$cmp_le0005> created at line 267.
+    Found 4-bit comparator lessequal for signal <next_s$cmp_le0006> created at line 344.
+    Found 32-bit register for signal <pc>.
+    Found 10-bit adder for signal <pc$add0000> created at line 159.
+    Found 32-bit adder for signal <pc$share0000> created at line 97.
+    Found 10-bit subtractor for signal <pc$sub0000> created at line 159.
+    Found 10-bit subtractor for signal <pc$sub0001> created at line 159.
+    Found 16-bit register for signal <TIME>.
+    Found 16-bit adder for signal <TIME$addsub0000> created at line 97.
+    Found 16-bit adder for signal <TIME$share0000> created at line 97.
+    Found 10-bit subtractor for signal <TIME$sub0000> created at line 124.
+    Found 1-bit register for signal <type>.
+    Found 32-bit comparator greatequal for signal <wrong_addr$cmp_ge0000> created at line 405.
+    Found 32-bit comparator lessequal for signal <wrong_addr$cmp_le0000> created at line 405.
+    Found 16-bit comparator lessequal for signal <wrong_grf$cmp_le0000> created at line 402.
+    Found 32-bit comparator greatequal for signal <wrong_pc$cmp_ge0000> created at line 399.
+    Found 32-bit comparator lessequal for signal <wrong_pc$cmp_le0000> created at line 399.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 113 D-type flip-flop(s).
+	inferred  15 Adder/Subtractor(s).
+	inferred  14 Comparator(s).
+Unit <cpu_checker> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 15
+ 10-bit adder                                          : 1
+ 10-bit subtractor                                     : 3
+ 16-bit adder                                          : 4
+ 32-bit adder                                          : 2
+ 32-bit subtractor                                     : 1
+ 4-bit adder                                           : 4
+# Registers                                            : 9
+ 1-bit register                                        : 1
+ 16-bit register                                       : 2
+ 32-bit register                                       : 2
+ 4-bit register                                        : 4
+# Latches                                              : 4
+ 1-bit latch                                           : 4
+# Comparators                                          : 14
+ 16-bit comparator lessequal                           : 1
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator lessequal                           : 2
+ 4-bit comparator lessequal                            : 5
+ 8-bit comparator greatequal                           : 2
+ 8-bit comparator lessequal                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <next_s/FSM> on signal <next_s[1:4]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 0000
+ 00001 | 0001
+ 00010 | 0010
+ 00011 | 0011
+ 00100 | 0100
+ 00101 | 0101
+ 00110 | 0110
+ 01000 | 0111
+ 01010 | 1000
+ 01100 | 1001
+ 01110 | 1010
+ 10000 | 1011
+ 10001 | 1100
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 15
+ 10-bit adder                                          : 1
+ 10-bit subtractor                                     : 3
+ 16-bit adder                                          : 4
+ 16-bit subtractor                                     : 1
+ 32-bit adder                                          : 2
+ 4-bit adder                                           : 4
+# Registers                                            : 113
+ Flip-Flops                                            : 113
+# Latches                                              : 4
+ 1-bit latch                                           : 4
+# Comparators                                          : 14
+ 16-bit comparator lessequal                           : 1
+ 32-bit comparator greatequal                          : 2
+ 32-bit comparator lessequal                           : 2
+ 4-bit comparator lessequal                            : 5
+ 8-bit comparator greatequal                           : 2
+ 8-bit comparator lessequal                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+ERROR:Xst:528 - Multi-source in Unit <cpu_checker> on signal <error_code<2>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LDC instance <wrong_addr/0>
+   Signal <wrong_addr> in Unit <cpu_checker> is assigned to GND
+
+ERROR:Xst:528 - Multi-source in Unit <cpu_checker> on signal <error_code<3>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LDC instance <wrong_grf/0>
+   Signal <wrong_grf> in Unit <cpu_checker> is assigned to GND
+
+ERROR:Xst:528 - Multi-source in Unit <cpu_checker> on signal <error_code<1>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LDC instance <wrong_pc/0>
+   Signal <wrong_pc> in Unit <cpu_checker> is assigned to GND
+
+ERROR:Xst:528 - Multi-source in Unit <cpu_checker> on signal <error_code<0>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of LDC instance <wrong_time/0>
+   Signal <wrong_time> in Unit <cpu_checker> is assigned to GND
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 2.79 secs
+ 
+--> 
+
+
+Total memory usage is 513216 kilobytes
+
+Number of errors   :    4 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

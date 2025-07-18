@@ -1,0 +1,34 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/co-eda/ISE/test_for/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to /home/co-eda/ISE/test_for/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "for.v" in library work
+ERROR:HDLCompilers:26 - "for.v" line 21 expecting 'IDENTIFIER', found 'for'
+Analysis of file <".prj"> failed.
+--> 
+
+
+Total memory usage is 460376 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

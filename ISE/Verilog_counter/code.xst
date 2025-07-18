@@ -1,0 +1,5 @@
+set -tmpdir "/home/co-eda/ISE/Verilog_counter/xst/projnav.tmp"
+set -xsthdpdir "/home/co-eda/ISE/Verilog_counter/xst"
+elaborate
+-ifn code.prj
+-ifmt mixed

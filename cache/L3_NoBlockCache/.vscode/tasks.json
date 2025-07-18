@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe build active file", // 任务的名字，可以自定义
+            "command": "gcc.exe",      // gcc.exe 的完整路径，如果已在环境变量中，写 "gcc.exe" 即可
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",                  // 生成调试信息，调试时必须
+                "${file}",             // 表示当前打开的文件，即 main.c
+                "-o",                  // 指定输出文件
+                "${fileDirname}\\${fileBasenameNoExtension}.exe" // 输出为 "当前目录\main.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiler: C:\\mingw64\\bin\\gcc.exe"
+        }
+    ]
+}

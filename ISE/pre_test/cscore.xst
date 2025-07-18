@@ -1,0 +1,5 @@
+set -tmpdir "/home/co-eda/ISE/pre_test/xst/projnav.tmp"
+set -xsthdpdir "/home/co-eda/ISE/pre_test/xst"
+elaborate
+-ifn cscore.prj
+-ifmt mixed

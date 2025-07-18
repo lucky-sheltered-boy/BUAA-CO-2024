@@ -1,0 +1,8 @@
+[Inputs]
+=in[6:0]=
+[Outputs]
+=out[7:5]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel top_module
+

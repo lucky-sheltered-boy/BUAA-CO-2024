@@ -1,0 +1,10 @@
+MO CP0 NULL ../P5_X_new/CP0.v vlg4B/_c_p0.bin 1751551544
+MO DM NULL ../P5_X_new/DM.v vlg21/_d_m.bin 1751551544
+MO CU NULL ../P5_X_new/CU.v vlg24/_c_u.bin 1751551544
+MO IM NULL ../P5_X_new/IM.v vlg3A/_i_m.bin 1751551544
+MO PC NULL ../P5_X_new/PC.v vlg53/_p_c.bin 1751551544
+MO Extender NULL ../P5_X_new/Extender.v vlg57/_extender.bin 1751551544
+MO splitter NULL ../P5_X_new/splitter.v vlg3F/splitter.bin 1751551544
+MO GRF NULL ../P5_X_new/GRF.v vlg4F/_g_r_f.bin 1751551544
+MO mips NULL ../P5_X_new/mips.v vlg1D/mips.bin 1751551544
+MO ALU NULL ../P5_X_new/ALU.v vlg2A/_a_l_u.bin 1751551544

@@ -1,0 +1,5 @@
+set -tmpdir "/home/co-eda/ISE/P1_L0_ALU/xst/projnav.tmp"
+set -xsthdpdir "/home/co-eda/ISE/P1_L0_ALU/xst"
+elaborate
+-ifn alu.prj
+-ifmt mixed

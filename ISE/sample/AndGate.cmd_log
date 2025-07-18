@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "/home/co-eda/ISE/sample/AndGate.xst" -ofn "/home/co-eda/ISE/sample/AndGate.syr" 
+xst -intstyle ise -ifn "/home/co-eda/ISE/sample/AndGate.xst" -ofn "/home/co-eda/ISE/sample/AndGate.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa3s50-vqg100-4 AndGate.ngc AndGate.ngd  
+map -intstyle ise -p xa3s50-vqg100-4 -cm area -ir off -pr off -c 100 -tx off -o AndGate_map.ncd AndGate.ngd AndGate.pcf 

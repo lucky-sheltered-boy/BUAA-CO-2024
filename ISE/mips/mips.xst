@@ -1,0 +1,5 @@
+set -tmpdir "/home/co-eda/ISE/CPU/xst/projnav.tmp"
+set -xsthdpdir "/home/co-eda/ISE/CPU/xst"
+elaborate
+-ifn mips.prj
+-ifmt mixed
