@@ -70,7 +70,7 @@ module Bridge(
 			m_data_byteen = 0;
 			TC1_WE = 0;
 			TC2_WE = |temp_m_data_byteen;
-			temp_m_data_rdata = TC1_Dout;
+			temp_m_data_rdata = TC2_Dout;
 			m_int_byteen = 0;
 		end else if(temp_m_data_addr >= `Inter_Addr_start && temp_m_data_addr <= `Inter_Addr_end) begin
 			m_data_byteen = 0;

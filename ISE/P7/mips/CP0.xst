@@ -1,5 +1,0 @@
-set -tmpdir "/media/shared/share/ISE/P7/mips/xst/projnav.tmp"
-set -xsthdpdir "/media/shared/share/ISE/P7/mips/xst"
-elaborate
--ifn CP0.prj
--ifmt mixed
