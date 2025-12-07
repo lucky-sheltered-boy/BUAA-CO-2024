@@ -103,7 +103,7 @@ module mips(
 	TC1 module_TC1(
 		.clk(clk),
 		.reset(reset),
-		.Addr(TC1_Addr),
+		.Addr(TC1_Addr[31:2]),
 		.WE(TC1_WE),
 		.Din(TC1_Din),
 		.Dout(TC1_Dout),
@@ -113,7 +113,7 @@ module mips(
 	TC2 module_TC2(
 		.clk(clk),
 		.reset(reset),
-		.Addr(TC2_Addr),
+		.Addr(TC2_Addr[31:2]),
 		.WE(TC2_WE),
 		.Din(TC2_Din),
 		.Dout(TC2_Dout),
